@@ -1,8 +1,17 @@
 "use client";
 
-import { Box, Typography, Button } from "@mui/joy";
+import {
+  Box,
+  Typography,
+  Button,
+  Stepper,
+  Step,
+  StepIndicator,
+} from "@mui/joy";
 import { useRouter } from "next/navigation";
 import { ROUTES } from "@/config/routes";
+import RegisterForm from "./RegisterForm";
+import { Check } from "@mui/icons-material";
 
 const Register = () => {
   const router = useRouter();
@@ -28,7 +37,7 @@ const Register = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            // alignItems: "center",
             width: "100%",
             maxWidth: { xs: "100%", sm: "500px", md: "600px" },
             p: { xs: 3, sm: 4, md: 6 },
@@ -48,6 +57,40 @@ const Register = () => {
           >
             Register
           </Typography>
+
+          <Stepper>
+            <Step
+              orientation="horizontal"
+              indicator={
+                <StepIndicator variant="solid" color="primary">
+                  <Check />
+                </StepIndicator>
+              }
+            >
+              Details
+            </Step>
+            <Step
+              orientation="horizontal"
+              indicator={
+                <StepIndicator variant="solid" color="primary">
+                  <Check />
+                </StepIndicator>
+              }
+            >
+              Confirmation
+            </Step>
+            <Step
+              orientation="horizontal"
+              indicator={
+                <StepIndicator variant="solid" color="primary">
+                  <Check />
+                </StepIndicator>
+              }
+            >
+              Key!
+            </Step>
+          </Stepper>
+          <RegisterForm />
 
           <Button
             fullWidth
