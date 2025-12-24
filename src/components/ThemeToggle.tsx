@@ -18,12 +18,14 @@ export default function ThemeToggle() {
   }
 
   return (
-    <IconButton
-      variant="outlined"
-      onClick={() => setMode(mode === "light" ? "dark" : "light")}
-      sx={{ position: "fixed", top: 16, right: 16 }}
-    >
-      {mode === "light" ? <DarkMode /> : <LightMode />}
-    </IconButton>
+    <>
+      <IconButton
+        variant="outlined"
+        onClick={() => setMode(mode === "light" ? "dark" : "light")}
+        sx={{ position: "fixed", top: 16, right: 16 }}
+      >
+        {mode === "light" ? <DarkMode /> : <LightMode />}
+      </IconButton>
+    </>
   );
 }

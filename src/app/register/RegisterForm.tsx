@@ -79,10 +79,12 @@ const RegisterForm = (props: IProps) => {
           <Controller
             name="groupName"
             control={control}
+            rules={{ required: "Group Name is required" }}
             render={({ field }) => (
               <Input
                 {...field}
                 placeholder="Group Name"
+                error={!!errors.groupName}
                 sx={{ maxWidth: 200 }}
               />
             )}

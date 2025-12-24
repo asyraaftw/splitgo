@@ -15,6 +15,7 @@ import { useState } from "react";
 import { ROUTES } from "@/config/routes";
 import RegisterForm from "./RegisterForm";
 import Confirmation from "./Confirmation";
+import RegisterKey from "./RegisterKey";
 
 const steps = ["Details", "Confirmation", "Key"];
 
@@ -95,9 +96,9 @@ const Register = () => {
         )}
 
         {activeStep === 2 && (
-          <Typography level="h3" textAlign="center" color="success">
-            🎉 Registration Complete!
-          </Typography>
+          <>
+            <RegisterKey />
+          </>
         )}
 
         <Button

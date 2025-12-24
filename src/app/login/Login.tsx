@@ -28,14 +28,7 @@ const Login = () => {
           gap: 3,
         }}
       >
-        <Typography
-          color="primary"
-          level="h2"
-          variant="soft"
-          sx={{
-            textAlign: "center",
-          }}
-        >
+        <Typography level="h2" textAlign="center" color="primary">
           Login
         </Typography>
         <LoginForm />

@@ -9,8 +9,12 @@ import {
   FormHelperText,
   IconButton,
   Input,
+  LinearProgress,
+  Stack,
+  VariantProp,
 } from "@mui/joy";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 
 interface LoginFormData {
@@ -28,9 +32,15 @@ const LoginForm = () => {
       key: "",
     },
   });
+  const [variant, setVariant] = useState<VariantProp>("soft");
+
+  const goToDashboard = () => {
+    router.push(ROUTES.DASHBOARD);
+  };
 
   const onSubmit = (data: LoginFormData) => {
     console.log("Form data:", data);
+    router.push(ROUTES.DASHBOARD);
   };
 
   return (
@@ -77,6 +87,8 @@ const LoginForm = () => {
           </FormControl>
         )}
       />
+
+      {/* <LinearProgress color="primary" variant={variant} /> */}
 
       <Box
         sx={{
